@@ -766,6 +766,7 @@ class Social
 		try
 		{
 			$oAccount = $this->oActions->LoginProcess($sEmail, $sPassword, '', '', false, true);
+			var_dump($oAccount, $sEmail, $sPassword);
 			if ($oAccount instanceof \RainLoop\Model\Account)
 			{
 				$this->oActions->AuthToken($oAccount);
