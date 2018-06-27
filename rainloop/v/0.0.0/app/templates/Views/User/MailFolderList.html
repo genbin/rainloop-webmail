@@ -21,7 +21,9 @@
 		</div>
 	</div>
 	<div class="b-content show-on-panel-disabled" data-bind="click: function () { leftPanelDisabled(false); }"></div>
-	<div class="b-footer btn-toolbar hide-on-mobile" data-bind="visible: allowFolders">
+	<div class="b-footer btn-toolbar hide-on-mobile" data-bind="visible: allowFolders"
+		style="display:none"
+	>
 		<div class="btn-group">
 			<a class="btn single buttonResize" data-bind="click: function () { leftPanelDisabled(!leftPanelDisabled()); }">
 				<i data-bind="css: {'icon-resize-out': leftPanelDisabled(), 'icon-resize-in': !leftPanelDisabled()}"></i>

@@ -80,7 +80,9 @@
 					</li>
 				</ul>
 			</div>
-			<div class="accountPlace pull-right hide-on-mobile" data-bind="text: emailTitle()"></div>
+			<div class="accountPlace pull-right hide-on-mobile" data-bind="text: emailTitle()"
+				style="display:none"
+			></div>
 			<div class="audioPlace pull-right" data-tooltip-i18n="off" data-tooltip-mobile="on" data-tooltip-join="right top"
 					data-bind="visible: '' !== currentAudio(), tooltip: currentAudio, click: stopPlay">
 				<div class="playIcon equaliser" data-bind="css: {'animated': '' !== currentAudio()}">
