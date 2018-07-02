@@ -82,6 +82,7 @@ function httpClient($url, $params, $method = 'GET', $header = array(), $timeout 
         default:
             throw new Exception('不支持的请求方式！');
     }
+
     /* 初始化并执行curl请求 */
     $ch = curl_init();
     curl_setopt_array($ch, $opts);

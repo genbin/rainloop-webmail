@@ -1,16 +1,20 @@
 <?php
-$isProduct = false;
-$mailboxHost = 'http://localhost';
+$isProduct = true;
+$mailboxHost = 'http://10.17.4.6';
 $platformHost = 'http://192.168.3.52:9999/platform-app';
+
 if ($isProduct) {
-  include '/var/www/html/rainloop/index.php';
-  $mailboxHost = 'http://10.17.4.10';
+  // include '/var/www/html/rainloop/index.php';
+  // $mailboxHost = 'http://10.17.4.10';
+  // $platformHost = 'http://192.168.3.157:9999/platform-app';
+
+  include '/var/www/index.php';
+  $mailboxHost = 'http://10.17.4.6';
   $platformHost = 'http://192.168.3.157:9999/platform-app';
 
 } else {
   include '/var/www/index.php';
 }
-$pkey = 'JuZhouYun.HIO@18';
 $AES = array(
   'bit' => 128,
   'key' => 'JuZhouYun.HIO@18',

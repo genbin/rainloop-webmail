@@ -16,10 +16,6 @@ $aes = new AESMcrypt($AES['bit'], $AES['key'], $AES['iv'], $AES['mode']);
 $encryptP = $aes->encrypt($p);
 $id = $_POST['id'];
 $t = $_POST['t'];
-$data = array(
-  'account' => $encryptU,
-  'password' => $encryptP,
-);
 
 $param = array(
   'account'=>$u, 
@@ -60,5 +56,4 @@ exit;
 // echo 'DecryptStringend: '.$decrypt;
 // echo '<br/>';
 //
-// http://localhost/fetch-brief.php?u=完整邮箱名&p=邮箱密码&n=获取几条数据
 ////////////////////////////////////////

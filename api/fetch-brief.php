@@ -4,10 +4,9 @@ include 'config.inc.php';
 include 'utils.php';
 
 global $result;
-$cryptU = $_GET['u'];
+$aes = new AESMcrypt($AES['bit'], $AES['key'], $AES['iv'], $AES['mode']);
 $u = base64_decode($_GET['u']);
-$cryptPw = $_GET['p'];
-$p = base64_decode($cryptPw);
+$p = $aes->decrypt(base64_decode($_GET['p']));
 $n = $_GET['n']*1;
 
 $oActions = \RainLoop\Api::Actions();
