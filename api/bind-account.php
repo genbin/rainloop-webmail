@@ -16,11 +16,15 @@ $aes = new AESMcrypt($AES['bit'], $AES['key'], $AES['iv'], $AES['mode']);
 $encryptP = $aes->encrypt($p);
 $id = $_POST['id'];
 $t = $_POST['t'];
+$MAIL_TYPE = array(
+  'PRIVATE' => 1,
+  'ENTERPRISE' => 2
+);
 
 $param = array(
   'account'=>$u, 
   'password'=>$encryptP, 
-  'mailboxType'=>2
+  'mailboxType'=>$MAIL_TYPE['ENTERPRISE']
 );
 
 $headers[] = 'Content-Type: application/json';
@@ -31,6 +35,7 @@ if (empty($id)) {
   $url = $platformHost.'/platform/mailboxAccount/save';
   $res = httpClient($url, $param, 'POST', $headers, 10);
   echo $res;
+
 } else {
   $param['sid'] = $id;
   $url = $platformHost.'/platform/mailboxAccount/update';
